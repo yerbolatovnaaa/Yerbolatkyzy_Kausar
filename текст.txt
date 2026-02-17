@@ -1,0 +1,53 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("2 – Cinema Ticket");
+
+        Console.Write("Movie Title: ");
+        string movie = Console.ReadLine();
+
+        Console.Write("Number of Tickets: ");
+        int tickets = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Price per Ticket: ");
+        double ticketPrice = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Duration of Movie (hours): ");
+        double duration = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Screen Number: ");
+        int screen = int.Parse(Console.ReadLine());
+
+        Console.Write("First Letter of Seat Row: ");
+        char row = Convert.ToChar(Console.ReadLine());
+
+        Console.Write("Is 3D Movie (true/false): ");
+        bool is3D = Convert.ToBoolean(Console.ReadLine());
+
+        double totalCost = tickets * ticketPrice;
+        double costPerHour = totalCost / duration;
+
+        Console.WriteLine("\n--- RESULTS ---");
+        Console.WriteLine($"Movie Title: {movie}");
+        Console.WriteLine($"Tickets: {tickets}");
+        Console.WriteLine($"Price per Ticket: {ticketPrice}");
+        Console.WriteLine($"Duration: {duration}");
+        Console.WriteLine($"Screen: {screen}");
+        Console.WriteLine($"Seat Row: {row}");
+        Console.WriteLine($"3D: {is3D}");
+
+        Console.WriteLine($"\nTotal Ticket Cost: {totalCost}");
+        Console.WriteLine($"Cost per Hour: {costPerHour}");
+
+        Console.WriteLine("\nData Types:");
+        Console.WriteLine(movie.GetType());
+        Console.WriteLine(screen.GetType());
+        Console.WriteLine(is3D.GetType());
+
+        int castExample = (int)costPerHour; // explicit casting
+        Console.WriteLine($"Cost per Hour (int): {castExample}");
+    }
+}
